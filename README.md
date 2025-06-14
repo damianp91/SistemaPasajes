@@ -1,10 +1,10 @@
 # 🌐 Idioma / Language  
 > 📌 **Select your language:**  
-> - [Español](README.es.md)  
-> - [**English**](README.md) (current)  
+> - [🇪🇸Español](README.es.md)  
+> - [🇬🇧**English**](README.md) (current)  
 ---
 
-# TicketSystem
+# 🎫 TicketSystem
 
 ## System Requirements
 
@@ -18,9 +18,9 @@
 
   - Create an interface Ticket with the method ```javacalculateFinalCost()```.
   - Implement this interface in the classes ```javaRegularTicket```, ```javaStudentTicket```, and ```javaSeniorTicket```:
-    * RegularTicket: *_Pays the full base cost_*.
-    * StudentTicket: *_Pays 50% of the base cost_*.
-    * SeniorTicket:  *_Pays 25% of the base cost_*.
+    * RegularTicket: **_Pays the full base cost_**.
+    * StudentTicket: **_Pays 50% of the base cost_**.
+    * SeniorTicket:  **_Pays 25% of the base cost_**.
 
 ### 3. Inheritance and Polymorphism Model:
 
