@@ -9,15 +9,15 @@
 ## System Requirements
 
 ### 1. Object-Oriented Design:
-  - Create an abstract class named ```javaTransportVehicle``` with common attributes such as license
-    plate, capacity, company, and an abstract method ```java calculateBaseCost()```.
-  - Implement the subclasses ```javaBus```, ```javaTrain```, and ```javaSubway```, each with its own
-    specific implementation of ```javacalculateBaseCost()```.
+  - Create an abstract class named ```TransportVehicle``` with common attributes such as license
+    plate, capacity, company, and an abstract method ```calculateBaseCost()```.
+  - Implement the subclasses ```Bus```, ```Train```, and ```Subway```, each with its own
+    specific implementation of ```calculateBaseCost()```.
 
 ### 2. Ticket Management:
 
-  - Create an interface Ticket with the method ```javacalculateFinalCost()```.
-  - Implement this interface in the classes ```javaRegularTicket```, ```javaStudentTicket```, and ```javaSeniorTicket```:
+  - Create an interface Ticket with the method ```calculateFinalCost()```.
+  - Implement this interface in the classes ```RegularTicket```, ```StudentTicket```, and ```SeniorTicket```:
     * RegularTicket: **_Pays the full base cost_**.
     * StudentTicket: **_Pays 50% of the base cost_**.
     * SeniorTicket:  **_Pays 25% of the base cost_**.
@@ -43,4 +43,4 @@
 
 ### 6. Method Overriding:
 
-  - Override the ```javactoString()``` method in all relevant classes to display data in a readable format.
+  - Override the ```ctoString()``` method in all relevant classes to display data in a readable format.
