@@ -43,4 +43,4 @@
 
 ### 6. Method Overriding:
 
-  - Override the ```ctoString()``` method in all relevant classes to display data in a readable format.
+  - Override the ```toString()``` method in all relevant classes to display data in a readable format.
