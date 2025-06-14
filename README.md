@@ -23,9 +23,9 @@
     * SeniorTicket:  **_Pays 25% of the base cost_**.
 
 ### 3. Inheritance and Polymorphism Model:
-
-  - All tickets must be treated polymorphically.
-  - The system should be able to calculate the total cost of all issued tickets without knowing their concrete type.
+  > [!NOTE] 
+  > - All tickets must be treated polymorphically.
+  > - The system should be able to calculate the total cost of all issued tickets without knowing their concrete type.
 
 ### 4. Console Input/Output (Menu):
 
@@ -37,10 +37,10 @@
     * Displaying the total revenue collected.
 
 ### 5. Encapsulation and Validation:
-
-  - All attributes must be encapsulated (private/protected) and accessed via getters and setters.
-  - Validate input data to ensure it is not empty or invalid (e.g., capacity > 0, base cost > 0).
+  > [!IMPORTANT] 
+  > - All attributes must be encapsulated (private/protected) and accessed via getters and setters. 
+  > - Validate input data to ensure it is not empty or invalid (e.g., capacity > 0, base cost > 0).
 
 ### 6. Method Overriding:
 
-  - Override the toString() method in all relevant classes to display data in a readable format.
+  - Override the ```javactoString()``` method in all relevant classes to display data in a readable format.
