@@ -19,7 +19,7 @@ public class Bus extends TransportVehicle {
   @Override
   public String toString() {
     return String.format(
-      "Bus{%nlicensePlate=%s%ncapacity=%d%ncapacity=%s%nbaseCost=%.2f%n}",
+      "Bus{licensePlate=%s, capacity=%d, capacity=%s, baseCost=%.2f}",
       getLincensePlate(),
       getCapacity(),
       getCompany(),

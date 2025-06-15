@@ -29,7 +29,7 @@ public abstract class TransportVehicle implements Comparable<TransportVehicle> {
   }
 
   // Methods
-  abstract double calculateBaseCost();
+  public abstract double calculateBaseCost();
 
   @Override
   public boolean equals(Object obj) {
