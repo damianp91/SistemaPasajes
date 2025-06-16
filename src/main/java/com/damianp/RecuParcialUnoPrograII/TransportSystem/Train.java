@@ -23,7 +23,7 @@ public class Train extends TransportVehicle {
       getLincensePlate(),
       getCapacity(),
       getCompany(),
-      baseCost
+      calculateBaseCost()
     );
   }
 }

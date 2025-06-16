@@ -23,7 +23,7 @@ public class Bus extends TransportVehicle {
       getLincensePlate(),
       getCapacity(),
       getCompany(),
-      baseCost
+      calculateBaseCost()
     );
   }
 }

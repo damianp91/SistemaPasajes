@@ -23,7 +23,7 @@ public class Subway extends TransportVehicle {
       getLincensePlate(),
       getCapacity(),
       getCompany(),
-      baseCost
+      calculateBaseCost()
     );
   }
 }
