@@ -1,16 +1,10 @@
 package com.damianp.RecuParcialUnoPrograII;
 
-import com.damianp.RecuParcialUnoPrograII.TicketSystem.SeniorTicket;
-import com.damianp.RecuParcialUnoPrograII.TicketSystem.Ticket;
-import com.damianp.RecuParcialUnoPrograII.TransportSystem.Train;
-import com.damianp.RecuParcialUnoPrograII.TransportSystem.TransportVehicle;
+import com.damianp.RecuParcialUnoPrograII.MenuSystem.TicketOffice;
 
 public class Main {
   public static void main(String[] args) {
-    
-    TransportVehicle train = new Train("sdf345", 67, "subte");
-  
-    Ticket ticket = new SeniorTicket("Pepito perez", train);
-    System.out.println(ticket.toString());
+    TicketOffice payBox = new TicketOffice();
+    payBox.initSystem();
   }
 }

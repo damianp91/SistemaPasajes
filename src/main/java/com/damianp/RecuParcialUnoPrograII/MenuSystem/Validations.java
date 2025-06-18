@@ -25,7 +25,9 @@ public class Validations {
       System.err.print("The input must be a integer: ");
       scanner.next();
     }
-    return scanner.nextInt();
+    int element = scanner.nextInt();
+    scanner.nextLine();
+    return element;
   }
 
   /**
@@ -41,7 +43,9 @@ public class Validations {
       System.err.print("The input must be a decimal number: ");
       scanner.next();
     }
-    return scanner.nextDouble();
+    double element = scanner.nextDouble();
+    scanner.nextLine();
+    return element;
   }
 
   /**
@@ -92,7 +96,7 @@ public class Validations {
    */
   public int intervals(int number, int min, int max) {
     while (number < min || number > max) {
-      System.err.print("The input must be a range between " + min + "-" + max);
+      System.err.print("The input must be a range between " + min + "-" + max + ": ");
       number = integerRead();
     }
     return number;

@@ -3,6 +3,9 @@ package com.damianp.RecuParcialUnoPrograII.MenuSystem;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.damianp.RecuParcialUnoPrograII.TicketSystem.RegularTicket;
+import com.damianp.RecuParcialUnoPrograII.TicketSystem.SeniorTicket;
+import com.damianp.RecuParcialUnoPrograII.TicketSystem.StudentTicket;
 import com.damianp.RecuParcialUnoPrograII.TicketSystem.Ticket;
 import com.damianp.RecuParcialUnoPrograII.TransportSystem.Bus;
 import com.damianp.RecuParcialUnoPrograII.TransportSystem.Subway;
@@ -35,7 +38,7 @@ public class TicketOffice {
       5) Displaying the total revenue collected.
       6) Exit.
       ==========================================
-    """);
+      """);
   }
 
   /**
@@ -49,7 +52,7 @@ public class TicketOffice {
       2) SubWay (base cost $145.0).
       3) Train (base cost $175.6).
       ============================
-    """);
+      """);
   }
 
   /**
@@ -63,9 +66,16 @@ public class TicketOffice {
       2) Student.
       3) Senior.
       ===========================
-    """);
+      """);
   }
 
+  /**
+     * Creates and returns a transport vehicle based on user input.
+     * Users can choose between Bus, Subway, or Train and specify attributes like
+     * license plate, company name, and capacity.
+     * 
+     * @return A TransportVehicle object representing the chosen vehicle.
+     */
   public TransportVehicle createTrasnport() {
     TransportVehicle vehicle = null;
     transportMenu();
@@ -81,7 +91,7 @@ public class TicketOffice {
       int capacity = validation.intervals(validation.integerRead(), 25, 110);
       vehicle = new Bus(licensePlate, capacity, nameVehicle);
     }
-    // SubWay
+    // Subway
     else if(selection == 2) {
       int capacity = validation.intervals(validation.integerRead(), 65, 200);
       vehicle = new Subway(licensePlate, capacity, nameVehicle);
@@ -94,4 +104,91 @@ public class TicketOffice {
     return vehicle;
   }
 
+  /**
+     * Creates a ticket based on user input.
+     * Users can select the ticket type (Regular, Student, Senior) and
+     * provide details like package name and transport vehicle.
+     */
+  public void createTicket() {
+    ticketMenu();
+    System.out.print("Select kind of ticket: ");
+    int selection = validation.intervals(validation.integerRead(), 1, 3);
+    System.out.print("Name passenger: ");
+    String name = validation.toCapitalize(validation.stringRead());
+    TransportVehicle vehicle = createTrasnport();
+    if(selection == 1) {
+      tickets.add(new RegularTicket(name, vehicle));
+    }
+    else if(selection == 2) {
+      tickets.add(new StudentTicket(name, vehicle));
+    }
+    else {
+      tickets.add(new SeniorTicket(name, vehicle));
+    }
+  }
+
+  public void sortingByCost() {
+    System.out.println("Sorting by cost");
+  }
+
+  public void sortingByName() {
+    System.out.println("Sorting by name");
+  }
+
+  public void calculateAllTrips() {
+    double totalCost = 0;
+    System.out.println("====             EARNINGS             ====");
+    if(tickets.isEmpty()) {
+      System.out.println("There're not trips yet.");
+    }
+    else {
+      for(Ticket ticket : tickets) {
+        totalCost += ticket.calculateFinalCost();
+      }
+    }
+    System.out.printf("Total collected: $%.2f%n", totalCost);
+    System.out.printf("Total trips: %d%n", tickets.size());
+    System.out.println("==========================================");
+  }
+
+  /**
+     * Displays all completed trips.
+     * Iterates through the list of tickets and prints their information.
+     * If no trips exist, a message is displayed indicating so.
+     */
+  public void displayTrips() {
+    System.out.println("=====         COMPLETED TRIPS         =====");
+    if(tickets.isEmpty()) {
+      System.out.println("There're not trips yet.");
+    }
+    else {
+      for(Ticket ticket : tickets) {
+        System.out.println(ticket.toString());
+      }
+    }
+    System.out.println("==========================================");
+  }
+
+  /**
+     * Initializes the ticket office system.
+     * Displays the main menu and handles user input for selecting actions
+     * such as creating tickets, displaying trips, sorting data, and exiting.
+     */
+  public void initSystem() {
+    int selection;
+    do {
+      mainMenu();
+      System.out.print("Select option: ");
+      selection = validation.integerRead();
+      switch (selection) {
+        case 1 -> createTicket(); 
+        case 2 -> displayTrips();
+        case 3 -> sortingByCost();
+        case 4 -> sortingByName();
+        case 5 -> calculateAllTrips();
+        case 6 -> System.out.println("Exit of the System...");
+        default -> System.out.println("¡Incorrect choise!.");
+      }
+    } while (selection != 6);
+  }
 }

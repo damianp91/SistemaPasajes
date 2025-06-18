@@ -17,7 +17,7 @@ public class Train extends TransportVehicle {
 
   // Setters
   public void setBaseCost(double cost) {
-    if(cost < 0) {
+    if(cost > 0) {
       this.baseCost = cost;
     }
     else {
