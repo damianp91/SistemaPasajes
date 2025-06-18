@@ -8,7 +8,7 @@ import com.damianp.RecuParcialUnoPrograII.TransportSystem.TransportVehicle;
 public class Main {
   public static void main(String[] args) {
     
-    TransportVehicle train = new Train("sdf345", 67, "subte", 120);
+    TransportVehicle train = new Train("sdf345", 67, "subte");
   
     Ticket ticket = new SeniorTicket("Pepito perez", train);
     System.out.println(ticket.toString());

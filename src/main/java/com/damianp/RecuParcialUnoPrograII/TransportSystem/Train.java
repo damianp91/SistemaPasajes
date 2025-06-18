@@ -5,9 +5,24 @@ public class Train extends TransportVehicle {
   private double baseCost;
 
   // Constructor
-  public Train(String license, int capacity, String company, double cost) {
+  public Train(String license, int capacity, String company) {
     super(license, capacity, company);
-    this.baseCost = cost;
+    this.baseCost = 175.6;
+  }
+
+  // Getters
+  public double getBaseCost() {
+    return baseCost;
+  }
+
+  // Setters
+  public void setBaseCost(double cost) {
+    if(cost < 0) {
+      this.baseCost = cost;
+    }
+    else {
+      this.baseCost = 175.6;
+    }
   }
 
   // Methods

@@ -5,11 +5,26 @@ public class Subway extends TransportVehicle {
   private double baseCost;
 
   // Constructor
-  public Subway(String license, int capacity, String company, double cost) {
+  public Subway(String license, int capacity, String company) {
     super(license, capacity, company);
-    this.baseCost = cost;
+    this.baseCost = 145.0;
   }
   
+  // Getters
+  public double getBaseCost() {
+    return baseCost;
+  }
+
+  // Setters
+  public void setBaseCost(double cost) {
+    if(cost < 0) {
+      this.baseCost = cost;
+    }
+    else {
+      this.baseCost = 145.0;
+    }
+  }
+
   // Methods
   @Override
   public double calculateBaseCost() {

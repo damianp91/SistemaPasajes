@@ -27,19 +27,6 @@ public abstract class TransportVehicle implements Comparable<TransportVehicle> {
   public String getCompany() {
     return company;
   }
-  
-  // Setters
-  public void setLincensePlate(String lincensePlate) {
-    this.lincensePlate = lincensePlate;
-  }
-
-  public void setCapacity(int capacity) {
-    this.capacity = capacity;
-  }
-
-  public void setCompany(String company) {
-    this.company = company;
-  }
 
   // Methods
   public abstract double calculateBaseCost();
