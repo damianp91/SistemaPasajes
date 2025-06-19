@@ -2,6 +2,7 @@ package com.damianp.RecuParcialUnoPrograII.TicketSystem;
 
 public interface Ticket extends Comparable<Ticket> {
 
+  String getPassegerName();
   double calculateFinalCost();
 
   @Override

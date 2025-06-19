@@ -1,6 +1,7 @@
 package com.damianp.RecuParcialUnoPrograII.MenuSystem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.damianp.RecuParcialUnoPrograII.TicketSystem.RegularTicket;
@@ -16,7 +17,7 @@ public class TicketOffice {
   // Atributes
   private List<Ticket> tickets;
   private Validations validation;
- 
+
   // Constructor
   public TicketOffice() {
     this.tickets = new ArrayList<>();
@@ -127,14 +128,31 @@ public class TicketOffice {
     }
   }
 
+  /**
+     * Sorts the list of tickets by cost in ascending order.
+     * Displays the sorted list of trips after sorting.
+     */
   public void sortingByCost() {
     System.out.println("Sorting by cost");
+    Collections.sort(tickets);
+    displayTrips();
   }
 
+  /**
+     * Sorts the list of tickets by passenger name in ascending order.
+     * Displays the sorted list of trips after sorting.
+     */
   public void sortingByName() {
     System.out.println("Sorting by name");
+    tickets.sort(new sortingNamesAsc());
+    displayTrips();
   }
 
+  /**
+     * Calculates and displays the total revenue collected from all trips.
+     * Also displays the total number of trips completed.
+     * If no trips exist, a message is displayed indicating so.
+     */
   public void calculateAllTrips() {
     double totalCost = 0;
     System.out.println("====             EARNINGS             ====");

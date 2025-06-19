@@ -13,6 +13,15 @@ public class RegularTicket implements Ticket {
     this.vehicle = vehicle;
   }
 
+  @Override
+  public String getPassegerName() {
+    return passegerName;
+  }
+
+  public void setPassegerName(String passegerName) {
+    this.passegerName = passegerName;
+  }
+
   // Methods
   @Override
   public double calculateFinalCost() {
